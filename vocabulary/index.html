@@ -595,7 +595,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-CR">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
   <link rel="canonical" href="https://www.w3.org/TR/activitystreams-vocabulary/">
-  <meta name="generator" content="ReSpec 6.1.4">
+  <meta name="generator" content="ReSpec 6.1.5">
   <script id="initialUserConfig" type="application/json">
     {
       "specStatus": "CR",
@@ -683,10 +683,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Activity Vocabulary</h1>
-    <h2 id="w3c-candidate-recommendation-18-november-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2016-11-18">18 November 2016</time></h2>
+    <h2 id="w3c-candidate-recommendation-06-december-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2016-12-06">06 December 2016</time></h2>
     <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20161118/">https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20161118/</a></dd>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20161206/">https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20161206/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/activitystreams-vocabulary/">https://www.w3.org/TR/activitystreams-vocabulary/</a></dd>
       <dt>Latest editor's draft:</dt>
@@ -1025,7 +1025,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             A Link is an indirect, qualified reference to a resource identified by a URL. The fundamental model for links is established by [
             <cite><a class="bibref" href="#bib-RFC5988">RFC5988</a></cite>]. Many of the properties defined by the Activity Vocabulary allow values that are either instances of
             <code><a href="#dfn-object" class="internalDFN" data-link-type="dfn">Object</a></code> or <code><a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a></code>. When a <code><a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a></code> is used, it establishes a
-            <a href="http://patterns.dataincubator.org/book/qualified-relation.html">qualified relation</a> connecting the subject (the containing object) to the resource identified by the <code><a href="#dfn-href" class="internalDFN" data-link-type="dfn">href</a></code>.
+            <a href="http://patterns.dataincubator.org/book/qualified-relation.html">qualified relation</a> connecting the subject (the containing object) to the resource identified by the <code><a href="#dfn-href" class="internalDFN" data-link-type="dfn">href</a></code>. Properties of the <code><a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a></code> are properties of the reference as opposed to properties of the resource.
           </td>
         </tr>
         <tr>
@@ -1478,7 +1478,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-string">"actor"</span>: <span class="hljs-string">"http://john.example.org"</span>,
     <span class="hljs-string">"object"</span>: {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>
     }
   }
 }</pre></div>
@@ -1543,7 +1543,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-string">"actor"</span>: <span class="hljs-string">"http://john.example.org"</span>,
     <span class="hljs-string">"object"</span>: {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>
     }
   }
 }</pre></div>
@@ -2095,7 +2095,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-string">"actor"</span>: <span class="hljs-string">"http://john.example.org"</span>,
     <span class="hljs-string">"object"</span>: {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>
     }
   }
 }</pre></div>
@@ -2140,7 +2140,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-string">"actor"</span>: <span class="hljs-string">"http://john.example.org"</span>,
     <span class="hljs-string">"object"</span>: {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>
     }
   }
 }</pre></div>
@@ -2796,7 +2796,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 42</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Software Application."</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>
 }</pre></div>
               </div>
             </td>
@@ -2828,7 +2828,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 43</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Group"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Group."</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Big Beards of Austin"</span>
 }</pre></div>
               </div>
             </td>
@@ -2892,7 +2892,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 45</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Person"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Sally Smith."</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Sally Smith"</span>
 }</pre></div>
               </div>
             </td>
@@ -3062,8 +3062,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 48</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Article"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Blog Post"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;div&gt;... a long blog post&lt;/div&gt;"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"What a Crazy Day I Had"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;div&gt;... you will never believe ...&lt;/div&gt;"</span>,
   <span class="hljs-string">"attributedTo"</span>: <span class="hljs-string">"http://sally.example.org"</span>
 }</pre></div>
               </div>
@@ -3127,7 +3127,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 50</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Audio"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Podcast"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Interview With A Famous Technologist"</span>,
   <span class="hljs-string">"url"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Link"</span>,
     <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/podcast.mp3"</span>,
@@ -3163,7 +3163,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 51</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Image"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Cat Jumping on Wagon"</span>,
   <span class="hljs-string">"url"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Link"</span>,
@@ -3206,7 +3206,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 52</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Video"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Video"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Puppy Plays With Ball"</span>,
   <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/video.mkv"</span>,
   <span class="hljs-string">"duration"</span>: <span class="hljs-string">"PT2H"</span>
 }</pre></div>
@@ -3239,8 +3239,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 53</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Short Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is a short note"</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Word of Warning"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Looks like it is going to rain today. Bring an umbrella!"</span>
 }</pre></div>
               </div>
             </td>
@@ -3271,8 +3271,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 54</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Page"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Webpage"</span>,
-  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/page.html"</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Omaha Weather Report"</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/weather-in-omaha.html"</span>
 }</pre></div>
               </div>
             </td>
@@ -3303,7 +3303,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 55</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>,
   <span class="hljs-string">"startTime"</span>: <span class="hljs-string">"2014-12-31T23:00:00-08:00"</span>,
   <span class="hljs-string">"endTime"</span>: <span class="hljs-string">"2015-01-01T06:00:00-08:00"</span>
 }</pre></div>
@@ -3762,11 +3762,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 66</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Have you seen my cat?"</span>,
   <span class="hljs-string">"attachment"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
-      <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple Image"</span>,
+      <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is what he looks like."</span>,
       <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/cat.jpeg"</span>
     }
   ]
@@ -3803,7 +3803,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 67</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Image"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My cat taking a nap"</span>,
   <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/cat.jpeg"</span>,
   <span class="hljs-string">"attributedTo"</span>: [
     {
@@ -3819,7 +3819,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 68</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Image"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My cat taking a nap"</span>,
   <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/cat.jpeg"</span>,
   <span class="hljs-string">"attributedTo"</span>: [
     <span class="hljs-string">"http://joe.example.org"</span>,
@@ -3858,12 +3858,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 69</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Holiday announcement"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Thursday will be a company-wide holiday. Enjoy your day off!"</span>,
   <span class="hljs-string">"audience"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"http://example.org/Organization"</span>,
-    <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Organization"</span>
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"ExampleCo LLC"</span>
   }
 }</pre></div>
             </div>
@@ -4173,10 +4173,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"generator"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
-    <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Note Application"</span>
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>
   }
 }</pre></div>
             </div>
@@ -4210,7 +4210,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"icon"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
     <span class="hljs-string">"name"</span>: <span class="hljs-string">"Note icon"</span>,
@@ -4276,7 +4276,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"image"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
     <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Cat"</span>,
@@ -4291,7 +4291,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A Simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"image"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
@@ -4334,13 +4334,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 83</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"inReplyTo"</span>: {
-    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another note"</span>,
+    <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Previous note"</span>,
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-    <span class="hljs-string">"content"</span>: <span class="hljs-string">"Another note"</span>
+    <span class="hljs-string">"content"</span>: <span class="hljs-string">"What else is there?"</span>
   }
 }</pre></div>
             </div>
@@ -4349,9 +4349,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 84</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is all there is."</span>,
   <span class="hljs-string">"inReplyTo"</span>: <span class="hljs-string">"http://example.org/posts/1"</span>
 }</pre></div>
             </div>
@@ -4524,11 +4524,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"items"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Reminder for Going-Away Party"</span>
     },
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Meeting 2016-11-17"</span>
     }
   ]
 }</pre></div>
@@ -4544,11 +4544,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"orderedItems"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Meeting 2016-11-17"</span>
     },
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Reminder for Going-Away Party"</span>
     }
   ]
 }</pre></div>
@@ -4838,8 +4838,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-string">"http://example.org/posts/1"</span>,
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
-      <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>
+      <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
+      <span class="hljs-string">"content"</span>: <span class="hljs-string">"That is a tree."</span>
     }
   ]
 }</pre></div>
@@ -5020,18 +5020,18 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 104</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://www.test.example/notes/1"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"I am fine."</span>,
   <span class="hljs-string">"replies"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Collection"</span>,
     <span class="hljs-string">"totalItems"</span>: <span class="hljs-number">1</span>,
     <span class="hljs-string">"items"</span>: [
       {
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"A response to the note"</span>,
+        <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A response to the note"</span>,
         <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-        <span class="hljs-string">"content"</span>: <span class="hljs-string">"A response to the note"</span>,
+        <span class="hljs-string">"content"</span>: <span class="hljs-string">"I am glad to hear it."</span>,
         <span class="hljs-string">"inReplyTo"</span>: <span class="hljs-string">"http://www.test.example/notes/1"</span>
       }
     ]
@@ -5071,7 +5071,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 105</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Image"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Picture of Sally"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Picture of Sally"</span>,
   <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/sally.jpg"</span>,
   <span class="hljs-string">"tag"</span>: [
     {
@@ -5346,7 +5346,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 114</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"content"</span>: <span class="hljs-string">"A &lt;em&gt;simple&lt;/em&gt; note"</span>
 }</pre></div>
@@ -5356,7 +5356,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 115</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"contentMap"</span>: {
     <span class="hljs-string">"en"</span>: <span class="hljs-string">"A &lt;em&gt;simple&lt;/em&gt; note"</span>,
@@ -5370,7 +5370,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 116</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"mediaType"</span>: <span class="hljs-string">"text/markdown"</span>,
   <span class="hljs-string">"content"</span>: <span class="hljs-string">"## A simple note\nA simple markdown `note`"</span>
@@ -5455,7 +5455,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 119</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Video"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Video"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Birds Flying"</span>,
   <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.org/video.mkv"</span>,
   <span class="hljs-string">"duration"</span>: <span class="hljs-string">"PT2H"</span>
 }</pre></div>
@@ -5534,7 +5534,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Link"</span>,
   <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/abc"</span>,
   <span class="hljs-string">"mediaType"</span>: <span class="hljs-string">"text/html"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"An example link"</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Previous"</span>
 }</pre></div>
             </div>
           </td>
@@ -5573,7 +5573,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/abc"</span>,
   <span class="hljs-string">"hreflang"</span>: <span class="hljs-string">"en"</span>,
   <span class="hljs-string">"mediaType"</span>: <span class="hljs-string">"text/html"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"An example link"</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Previous"</span>
 }</pre></div>
             </div>
           </td>
@@ -5617,11 +5617,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"items"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Pizza Toppings to Try"</span>
     },
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Thought about California"</span>
     }
   ]
 }</pre></div>
@@ -5743,7 +5743,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/abc"</span>,
   <span class="hljs-string">"hreflang"</span>: <span class="hljs-string">"en"</span>,
   <span class="hljs-string">"mediaType"</span>: <span class="hljs-string">"text/html"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"An example link"</span>
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Next"</span>
 }</pre></div>
             </div>
           </td>
@@ -5783,7 +5783,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 127</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>,
   <span class="hljs-string">"startTime"</span>: <span class="hljs-string">"2014-12-31T23:00:00-08:00"</span>,
   <span class="hljs-string">"endTime"</span>: <span class="hljs-string">"2015-01-01T06:00:00-08:00"</span>
 }</pre></div>
@@ -5820,9 +5820,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 128</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Fish swim."</span>,
   <span class="hljs-string">"published"</span>: <span class="hljs-string">"2014-12-12T12:12:12Z"</span>
 }</pre></div>
             </div>
@@ -5859,7 +5859,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 129</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Event"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Party!"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Going-Away Party for Jim"</span>,
   <span class="hljs-string">"startTime"</span>: <span class="hljs-string">"2014-12-31T23:00:00-08:00"</span>,
   <span class="hljs-string">"endTime"</span>: <span class="hljs-string">"2015-01-01T06:00:00-08:00"</span>
 }</pre></div>
@@ -5940,7 +5940,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/abc"</span>,
   <span class="hljs-string">"hreflang"</span>: <span class="hljs-string">"en"</span>,
   <span class="hljs-string">"mediaType"</span>: <span class="hljs-string">"text/html"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"An example link"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Preview"</span>,
   <span class="hljs-string">"rel"</span>: [<span class="hljs-string">"canonical"</span>, <span class="hljs-string">"preview"</span>]
 }</pre></div>
             </div>
@@ -5979,11 +5979,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"orderedItems"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Density of Water"</span>
     },
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Air Mattress Idea"</span>
     }
   ]
 }</pre></div>
@@ -6020,7 +6020,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 133</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Cane Sugar Processing"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A simple &lt;em&gt;note&lt;/em&gt;"</span>
 }</pre></div>
@@ -6030,7 +6030,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 134</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Cane Sugar Processing"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"summaryMap"</span>: {
     <span class="hljs-string">"en"</span>: <span class="hljs-string">"A simple &lt;em&gt;note&lt;/em&gt;"</span>,
@@ -6073,11 +6073,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-string">"items"</span>: [
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"A Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Which Staircase Should I Use"</span>
     },
     {
       <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Another Simple Note"</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Something to Remember"</span>
     }
   ]
 }</pre></div>
@@ -6164,9 +6164,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <div class="example">
                 <div class="example-title marker"><span>Example 137</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Cranberry Sauce Idea"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"A simple note"</span>,
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Mush it up so it does not have the same shape as the can."</span>,
   <span class="hljs-string">"updated"</span>: <span class="hljs-string">"2014-12-12T12:12:12Z"</span>
 }</pre></div>
             </div>

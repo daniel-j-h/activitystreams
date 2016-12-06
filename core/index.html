@@ -595,7 +595,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-CR">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
   <link rel="canonical" href="https://www.w3.org/TR/activitystreams-core/">
-  <meta name="generator" content="ReSpec 6.1.4">
+  <meta name="generator" content="ReSpec 6.1.5">
   <script id="initialUserConfig" type="application/json">
     {
       "specStatus": "CR",
@@ -687,10 +687,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Activity Streams 2.0</h1>
-    <h2 id="w3c-candidate-recommendation-18-november-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2016-11-18">18 November 2016</time></h2>
+    <h2 id="w3c-candidate-recommendation-06-december-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2016-12-06">06 December 2016</time></h2>
     <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://www.w3.org/TR/2016/CR-activitystreams-core-20161118/">https://www.w3.org/TR/2016/CR-activitystreams-core-20161118/</a></dd>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2016/CR-activitystreams-core-20161206/">https://www.w3.org/TR/2016/CR-activitystreams-core-20161206/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/activitystreams-core/">https://www.w3.org/TR/activitystreams-core/</a></dd>
       <dt>Latest editor's draft:</dt>
@@ -811,7 +811,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </li>
       <li class="tocline"><a href="#syntaxconventions" class="tocxref"><span class="secno">2. </span>Serialization</a>
         <ol class="toc">
-          <li class="tocline"><a href="#jsonld" class="tocxref"><span class="secno">2.1 </span>JSON-LD</a></li>
+          <li class="tocline"><a href="#jsonld" class="tocxref"><span class="secno">2.1 </span>JSON-LD</a>
+            <ol class="toc"></ol>
+          </li>
           <li class="tocline"><a href="#urls" class="tocxref"><span class="secno">2.2 </span>IRIs and URLs</a></li>
           <li class="tocline"><a href="#dates" class="tocxref"><span class="secno">2.3 </span>Date and Times</a></li>
         </ol>
@@ -838,6 +840,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <li class="tocline"><a href="#naturalLanguageValues" class="tocxref"><span class="secno">4.7 </span>Natural Language Values</a>
             <ol class="toc"></ol>
           </li>
+          <li class="tocline"><a href="#marking-up-language" class="tocxref"><span class="secno">4.8 </span>Marking up language</a></li>
         </ol>
       </li>
       <li class="tocline"><a href="#extensibility" class="tocxref"><span class="secno">5. </span>Extensibility</a>
@@ -1077,8 +1080,72 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           @context definition</a> using the URL "
         <code>https://www.w3.org/ns/activitystreams</code>". Implementations
         <em class="rfc2119" title="MAY">MAY</em> use the alternative URL "
-        <code>http://www.w3.org/ns/activitystreams</code>" instead.
+        <code>http://www.w3.org/ns/activitystreams</code>" instead. This can be done using a string, object, or array.
       </p>
+
+      <section id="example-1context" typeof="bibo:Chapter" resource="#example-1context" property="bibo:hasPart">
+        <h4 id="h-example-1context" resource="#h-example-1context"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.1 </span>Context with a string</span>
+        </h4>
+
+        <figure id="fig-document-providing-a-context-as-a-string.x">
+          <figcaption>Fig. <span class="figno">1</span> <span class="fig-title">
+              Document providing a context as a string.
+            </span></figcaption>
+          <div id="ex1-jsonld" style="display: block;">
+            <div class="example">
+              <div class="example-title marker"><span>Example 1</span></div><pre class="highlight json hljs xquery">{
+              <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+              <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A note"</span>,
+              <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
+              <span class="hljs-string">"content"</span>: <span class="hljs-string">"My dog has fleas."</span>
+            }</pre></div>
+          </div>
+        </figure>
+      </section>
+
+      <section id="example-2context" typeof="bibo:Chapter" resource="#example-2context" property="bibo:hasPart">
+        <h4 id="h-example-2context" resource="#h-example-2context"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>Context with an object</span>
+        </h4>
+
+        <figure id="fig-document-providing-context-as-an-object.x">
+          <figcaption>Fig. <span class="figno">2</span> <span class="fig-title">
+              Document providing context as an object.
+            </span></figcaption>
+          <div id="ex1-jsonld" style="display: block;">
+            <div class="example">
+              <div class="example-title marker"><span>Example 2</span></div><pre class="highlight json hljs xquery">{
+              <span class="hljs-string">"@context"</span>: {
+                 <span class="hljs-string">"@vocab"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>
+              },
+              <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A note"</span>,
+              <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
+              <span class="hljs-string">"content"</span>: <span class="hljs-string">"My dog has fleas."</span>,
+            }</pre></div>
+          </div>
+        </figure>
+      </section>
+
+      <section id="example-3context" typeof="bibo:Chapter" resource="#example-3context" property="bibo:hasPart">
+        <h4 id="h-example-3context" resource="#h-example-3context"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Context with an array</span>
+        </h4>
+
+        <figure id="fig-document-providing-context-as-an-array.x">
+          <figcaption>Fig. <span class="figno">3</span> <span class="fig-title">
+              Document providing context as an array.
+            </span></figcaption>
+          <div id="ex1-jsonld" style="display: block;">
+            <div class="example">
+              <div class="example-title marker"><span>Example 3</span></div><pre class="highlight json hljs xquery">{
+              <span class="hljs-string">"@context"</span>: [
+                 <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>
+              ],
+              <span class="hljs-string">"summary"</span>: <span class="hljs-string">"A note"</span>,
+              <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
+              <span class="hljs-string">"content"</span>: <span class="hljs-string">"My dog has fleas."</span>,
+            }</pre></div>
+          </div>
+        </figure>
+      </section>
 
       <div class="note">
         <div class="note-title marker" aria-level="4" role="heading" id="h-note1"><span>Note</span><span style="text-transform: none">: At Risk</span></div>
@@ -1151,13 +1218,13 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </h3>
 
       <figure id="fig-expresses-the-statement-http-www.test.example-martin-created-http-example.org-foo.jpg-.-no-additional-detail-is-given.x">
-        <figcaption>Fig. <span class="figno">1</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">4</span> <span class="fig-title">
     Expresses the statement <code>'http://www.test.example/martin' created
     'http://example.org/foo.jpg'</code>.  No additional detail is given.
   </span></figcaption>
         <div id="ex1-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 1</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 4</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Martin created an image"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Create"</span>,
@@ -1173,7 +1240,7 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </h3>
 
       <figure id="fig-expresses-the-statement-martin-smith-added-an-article-to-the-blog-martin-s-blog-at-3-04-pm-utc-on-february-10-2015.-some-additional-details-about-the-article-actor-and-target-blog-are-given-using-properties-defined-by-the-activity-streams-2.0-vocabulary.x">
-        <figcaption>Fig. <span class="figno">2</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">5</span> <span class="fig-title">
         Expresses the statement "Martin Smith added an article to the blog
         'Martin's Blog' at 3:04 PM UTC on February 10, 2015."  Some additional
         details about the article, actor and target blog are given using
@@ -1183,7 +1250,7 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </span></figcaption>
         <div id="ex2-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 2</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 5</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Martin added an article to his blog"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Add"</span>,
@@ -1222,13 +1289,13 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </h3>
 
       <figure id="fig-a-more-extensive-single-entry-activity-stream-follows.x">
-        <figcaption>Fig. <span class="figno">3</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">6</span> <span class="fig-title">
         A more extensive, single-entry "Activity Stream" follows.
       </span></figcaption>
 
         <div id="ex3-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 3</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 6</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Martin's recent activities"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Collection"</span>,
@@ -1384,7 +1451,7 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">
-        <figcaption>Fig. <span class="figno">4</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">7</span> <span class="fig-title">
     Following is an example Object that uses the <code>id</code> and
     <code>type</code> properties to express the global identifier and object
     type:
@@ -1392,11 +1459,11 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
 
         <div id="ex4-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 4</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 7</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/foo"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"This is a note"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My favourite stew recipe"</span>,
   <span class="hljs-string">"attributedTo"</span>: {
     <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://joe.website.example/"</span>,
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Person"</span>,
@@ -1421,10 +1488,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-an-object-that-is-both-a-place-and-a-gr-location">
-        <figcaption>Fig. <span class="figno">5</span> <span class="fig-title">An Object that is both a <code>Place</code> and a <code>gr:Location</code>:</span></figcaption>
+        <figcaption>Fig. <span class="figno">8</span> <span class="fig-title">An Object that is both a <code>Place</code> and a <code>gr:Location</code>:</span></figcaption>
         <div id="ex6-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 5</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 8</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {
@@ -1462,12 +1529,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </p>
 
         <figure id="fig-a-note-with-a-name-defined-by-the-author">
-          <figcaption>Fig. <span class="figno">6</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">9</span> <span class="fig-title">
            A note with a name defined by the author
         </span></figcaption>
           <div id="ex11e-jsonld" style="display: block;">
             <div class="example">
-              <div class="example-title marker"><span>Example 6</span></div><pre class="highlight json hljs xquery">{
+              <div class="example-title marker"><span>Example 9</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/note/123"</span>,
@@ -1478,12 +1545,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </figure>
 
         <figure id="fig-a-note-with-an-automatically-generated-summary">
-          <figcaption>Fig. <span class="figno">7</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">10</span> <span class="fig-title">
              A note with an automatically-generated summary
           </span></figcaption>
           <div id="ex11f-jsonld" style="display: block;">
             <div class="example">
-              <div class="example-title marker"><span>Example 7</span></div><pre class="highlight json hljs xquery">{
+              <div class="example-title marker"><span>Example 10</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/note/124"</span>,
@@ -1529,33 +1596,33 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-to-reference-a-single-image-without-any-additional-metadata-a-direct-association-can-be-expressed-as-a-json-string-containing-an-absolute-iri.x">
-        <figcaption>Fig. <span class="figno">8</span> <span class="fig-title">To reference a single image without any additional
+        <figcaption>Fig. <span class="figno">11</span> <span class="fig-title">To reference a single image without any additional
       metadata, a direct association can be expressed as a JSON string
       containing an absolute IRI.</span></figcaption>
         <div id="ex12-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 8</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 11</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/application/123"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Application"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>,
   <b><span class="hljs-string">"image"</span>: <span class="hljs-string">"http://example.org/application/123.png"</span></b>
 }</pre></div>
         </div>
       </figure>
 
       <figure id="fig-alternatively-if-additional-metadata-is-required-such-as-the-mime-content-type-of-the-referenced-resource-a-link-can-be-used">
-        <figcaption>Fig. <span class="figno">9</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">12</span> <span class="fig-title">
         Alternatively, if additional metadata is required (such as the MIME
         content type of the referenced resource) a <a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a> can be used:
       </span></figcaption>
         <div id="ex13-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 9</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 12</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/application/123"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Application"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>,
   <b><span class="hljs-string">"image"</span>: {
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"Link"</span>,
     <span class="hljs-string">"href"</span>: <span class="hljs-string">"http://example.org/application/123.png"</span>,
@@ -1571,17 +1638,17 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-if-more-than-one-value-is-to-be-expressed-a-json-array-with-a-mix-of-strings-and-links-can-be-used">
-        <figcaption>Fig. <span class="figno">10</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">13</span> <span class="fig-title">
         If more than one value is to be expressed, A JSON Array with a
         mix of strings and <a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a>s can be used:
       </span></figcaption>
         <div id="ex14-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 10</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 13</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/application/123"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Application"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>,
   <b><span class="hljs-string">"image"</span>: [
     <span class="hljs-string">"http://example.org/application/abc.gif"</span>,
     {
@@ -1610,15 +1677,15 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         In the following example, two separate references are provided. The link relation of the first is unspecified, while the link relation of the second is "<code>thumbnail</code>".
       </p>
 
-      <figure id="fig-example-11-context-https-www.w3.org-ns-activitystreams-type-application-id-http-example.org-application-123-name-my-application-image-http-example.org-application-abc.gif-type-link-href-http-example.org-application-123.png-mediatype-image-png-rel-thumbnail">
-        <figcaption>Fig. <span class="figno">11</span> <span class="fig-title"></span></figcaption>
+      <figure id="fig-example-14-context-https-www.w3.org-ns-activitystreams-type-application-id-http-example.org-application-123-name-exampletron-3000-image-http-example.org-application-abc.gif-type-link-href-http-example.org-application-123.png-mediatype-image-png-rel-thumbnail">
+        <figcaption>Fig. <span class="figno">14</span> <span class="fig-title"></span></figcaption>
         <div id="ex15-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 11</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 14</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Application"</span>,
   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/application/123"</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"My Application"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Exampletron 3000"</span>,
   <span class="hljs-string">"image"</span>: [
     <span class="hljs-string">"http://example.org/application/abc.gif"</span>,
     {
@@ -1667,10 +1734,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-an-activity-with-a-person-actor-extended-with-vcard-properties">
-        <figcaption>Fig. <span class="figno">12</span> <span class="fig-title">An Activity with a Person actor extended with VCard properties:</span></figcaption>
+        <figcaption>Fig. <span class="figno">15</span> <span class="fig-title">An Activity with a Person actor extended with VCard properties:</span></figcaption>
         <div id="ex17-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 12</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 15</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {<span class="hljs-string">"vcard"</span>: <span class="hljs-string">"http://www.w3.org/2006/vcard/ns#"</span>}
@@ -1725,10 +1792,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-the-following-example-illustrates-a-simple-activity">
-        <figcaption>Fig. <span class="figno">13</span> <span class="fig-title">The following example illustrates a simple Activity:</span></figcaption>
+        <figcaption>Fig. <span class="figno">16</span> <span class="fig-title">The following example illustrates a simple Activity:</span></figcaption>
         <div id="ex19-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 13</span></div><pre class="highlight json hljs xquery"><code>{
+            <div class="example-title marker"><span>Example 16</span></div><pre class="highlight json hljs xquery"><code>{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Joe liked a note"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Like"</span>,
@@ -1754,12 +1821,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-an-activity-that-is-both-a-like-and-a-http-schema.org-likeaction">
-        <figcaption>Fig. <span class="figno">14</span> <span class="fig-title">An Activity that is both a
+        <figcaption>Fig. <span class="figno">17</span> <span class="fig-title">An Activity that is both a
        <code><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like">Like</a></code>
        and a <code>http://schema.org/LikeAction</code>:</span></figcaption>
         <div id="ex20-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 14</span></div><pre class="highlight json hljs xquery"><code>{
+            <div class="example-title marker"><span>Example 17</span></div><pre class="highlight json hljs xquery"><code>{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Joe liked a note"</span>,
   <span class="hljs-string">"type"</span>: [<span class="hljs-string">"Like"</span>, <span class="hljs-string">"http://schema.org/LikeAction"</span>],
@@ -1813,12 +1880,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-the-following-is-a-simple-unordered-collection">
-        <figcaption>Fig. <span class="figno">15</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">18</span> <span class="fig-title">
           The following is a simple unordered collection:
         </span></figcaption>
         <div id="ex21-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 15</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 18</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Object history"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Collection"</span>,
@@ -1840,12 +1907,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </figure>
 
       <figure id="fig-the-following-is-a-simple-ordered-collection">
-        <figcaption>Fig. <span class="figno">16</span> <span class="fig-title">
+        <figcaption>Fig. <span class="figno">19</span> <span class="fig-title">
           The following is a simple ordered collection:
         </span></figcaption>
         <div id="ex22-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 16</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 19</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Object history"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"OrderedCollection"</span>,
@@ -1917,7 +1984,7 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </p>
 
         <figure id="fig-an-illustration-of-the-relationship-between-collection-orderedcollection-collectionpage-and-orderedcollectionpage">
-          <figcaption>Fig. <span class="figno">17</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">20</span> <span class="fig-title">
             An illustration of the relationship between <code>Collection</code>,
             <code>OrderedCollection</code>, <code>CollectionPage</code>, and
             <code>OrderedCollectionPage</code>:
@@ -1931,7 +1998,7 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </p>
 
         <figure id="fig-a-visualization-of-the-collection-paging-model">
-          <figcaption>Fig. <span class="figno">18</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">21</span> <span class="fig-title">
             A visualization of the Collection paging model:
           </span></figcaption>
           <img src="paging.png" alt="The Paging Model">
@@ -1950,12 +2017,12 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </p>
 
         <figure id="fig-the-following-is-a-simple-unordered-collection-with-paging">
-          <figcaption>Fig. <span class="figno">19</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">22</span> <span class="fig-title">
           The following is a simple unordered collection with paging:
         </span></figcaption>
           <div id="ex21b-jsonld" style="display: block;">
             <div class="example">
-              <div class="example-title marker"><span>Example 17</span></div><pre class="highlight json hljs xquery">{
+              <div class="example-title marker"><span>Example 20</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Sally's recent activities"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Collection"</span>,
@@ -1998,10 +2065,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-a-single-name-string-value-without-language-information">
-        <figcaption>Fig. <span class="figno">20</span> <span class="fig-title">A single name String value without language information:</span></figcaption>
+        <figcaption>Fig. <span class="figno">23</span> <span class="fig-title">A single name String value without language information:</span></figcaption>
         <div id="ex7-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 18</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 21</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Object"</span>,
   <b><span class="hljs-string">"name"</span>: <span class="hljs-string">"This is the title"</span></b>
@@ -2010,10 +2077,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </figure>
 
       <figure id="fig-multiple-language-specific-values">
-        <figcaption>Fig. <span class="figno">21</span> <span class="fig-title">Multiple, language-specific values:</span></figcaption>
+        <figcaption>Fig. <span class="figno">24</span> <span class="fig-title">Multiple, language-specific values:</span></figcaption>
         <div id="ex8-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 19</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 22</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Object"</span>,
   <b><span class="hljs-string">"nameMap"</span>: {
@@ -2044,10 +2111,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-using-the-und-language-tag">
-        <figcaption>Fig. <span class="figno">22</span> <span class="fig-title">Using the <code>"und"</code> language tag:</span></figcaption>
+        <figcaption>Fig. <span class="figno">25</span> <span class="fig-title">Using the <code>"und"</code> language tag:</span></figcaption>
         <div id="ex11b-jsonld" style="display: block;">
           <div class="example">
-            <div class="example-title marker"><span>Example 20</span></div><pre class="highlight json hljs xquery">{
+            <div class="example-title marker"><span>Example 23</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Object"</span>,
   <span class="hljs-string">"nameMap"</span>: {
@@ -2074,13 +2141,13 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
         </p>
 
         <figure id="fig-specifying-the-default-language-within-the-json-ld-context">
-          <figcaption>Fig. <span class="figno">23</span> <span class="fig-title">
+          <figcaption>Fig. <span class="figno">26</span> <span class="fig-title">
             Specifying the default <code>"@language"</code> within the JSON-LD
             <code>@context</code>:
           </span></figcaption>
           <div id="ex11c-jsonld" style="display: block;">
             <div class="example">
-              <div class="example-title marker"><span>Example 21</span></div><pre class="highlight json hljs xquery">{
+              <div class="example-title marker"><span>Example 24</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {
@@ -2183,6 +2250,19 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
 
     </section>
 
+    <section id="marking-up-language" typeof="bibo:Chapter" resource="#marking-up-language" property="bibo:hasPart">
+      <h3 id="h-marking-up-language" resource="#h-marking-up-language"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.8 </span>Marking up language</span>
+      </h3>
+      <p>
+        Activity Streams 2.0 publishers <em class="rfc2119" title="SHOULD">SHOULD</em> explicitly mark the language of natural language properties if they are known, using either map properties or a default language tag.
+      </p>
+      <div class="note">
+        <div class="note-title marker" aria-level="4" role="heading" id="h-note4"><span>Note</span><span style="text-transform: none">: Examples</span></div>
+        <p class="">
+          Not all examples in this specification explicitly mark the language of natural language properties. This is intentional. The authors and the working group wished to avoid having implementers cut-and-paste examples from the document with explicit language markup as a template for new documents, which would consequently have inaccurate language markup.
+        </p>
+      </div>
+    </section>
   </section>
 
   <section id="extensibility" typeof="bibo:Chapter" resource="#extensibility" property="bibo:hasPart">
@@ -2201,6 +2281,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
     </p>
 
     <p>
+      Some popular extensions are included in the Activity Streams 2.0 namespace document, and can be reviewed at <a href="https://www.w3.org/ns/activitystreams#extensions">https://www.w3.org/ns/activitystreams#extensions</a>.
+    </p>
+
+    <p>
       It is important to note that the JSON-LD Processing Algorithms [
       <cite><a class="bibref" href="#bib-JSON-LD-API">JSON-LD-API</a></cite>], as currently defined, will silently ignore any property not defined in a JSON-LD @context. Implementations that publish Activity Streams 2.0 documents containing extension properties <em class="rfc2119" title="SHOULD">SHOULD</em> provide a @context definition for all extensions.
     </p>
@@ -2212,19 +2296,19 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
     </p>
 
     <figure id="fig-geojson-point-coordinates">
-      <figcaption>Fig. <span class="figno">24</span> <span class="fig-title">GeoJSON Point Coordinates:</span></figcaption>
+      <figcaption>Fig. <span class="figno">27</span> <span class="fig-title">GeoJSON Point Coordinates:</span></figcaption>
       <div class="example">
-        <div class="example-title marker"><span>Example 22</span></div><pre class="highlight json hljs xquery">{
+        <div class="example-title marker"><span>Example 25</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
   <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">36.74</span>, -<span class="hljs-number">119.77</span>]
 }</pre></div>
     </figure>
 
     <figure id="fig-the-equivalent-place-alternative">
-      <figcaption>Fig. <span class="figno">25</span> <span class="fig-title">The Equivalent <code>Place</code> alternative:</span></figcaption>
+      <figcaption>Fig. <span class="figno">28</span> <span class="fig-title">The Equivalent <code>Place</code> alternative:</span></figcaption>
       <div id="ex23-jsonld" style="display: block;">
         <div class="example">
-          <div class="example-title marker"><span>Example 23</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 26</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"name"</span>: <span class="hljs-string">"Fresno, California"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Place"</span>,
@@ -2235,9 +2319,9 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
     </figure>
 
     <figure id="fig-geojson-polygon-coordinates">
-      <figcaption>Fig. <span class="figno">26</span> <span class="fig-title">GeoJSON Polygon Coordinates:</span></figcaption>
+      <figcaption>Fig. <span class="figno">29</span> <span class="fig-title">GeoJSON Polygon Coordinates:</span></figcaption>
       <div class="example">
-        <div class="example-title marker"><span>Example 24</span></div><pre class="highlight json hljs xquery">{
+        <div class="example-title marker"><span>Example 27</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Polygon"</span>,
   <span class="hljs-string">"coordinates"</span>: [
     [
@@ -2252,10 +2336,10 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
     </figure>
 
     <figure id="fig-the-equivalent-geosparql-well-known-text-alternative">
-      <figcaption>Fig. <span class="figno">27</span> <span class="fig-title">The Equivalent GeoSparql Well-Known-Text alternative:</span></figcaption>
+      <figcaption>Fig. <span class="figno">30</span> <span class="fig-title">The Equivalent GeoSparql Well-Known-Text alternative:</span></figcaption>
       <div id="ex24-jsonld" style="display: block;">
         <div class="example">
-          <div class="example-title marker"><span>Example 25</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 28</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {<span class="hljs-string">"gsp"</span>: <span class="hljs-string">"http://www.opengis.net/ont/geosparql"</span>}
@@ -2282,9 +2366,9 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-a-json-ld-compact-uri-definition">
-        <figcaption>Fig. <span class="figno">28</span> <span class="fig-title">A JSON-LD Compact URI definition</span></figcaption>
+        <figcaption>Fig. <span class="figno">31</span> <span class="fig-title">A JSON-LD Compact URI definition</span></figcaption>
         <div class="example">
-          <div class="example-title marker"><span>Example 26</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 29</span></div><pre class="highlight json hljs xquery">{
 <span class="hljs-string">"@context"</span>: {
 <span class="hljs-string">"ex"</span>: <span class="hljs-string">"http://example.org/"</span>,
 <span class="hljs-string">"term"</span>: {
@@ -2333,9 +2417,9 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-a-simple-extended-object">
-        <figcaption>Fig. <span class="figno">29</span> <span class="fig-title">A simple extended Object</span></figcaption>
+        <figcaption>Fig. <span class="figno">32</span> <span class="fig-title">A simple extended Object</span></figcaption>
         <div class="example">
-          <div class="example-title marker"><span>Example 27</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 30</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {<span class="hljs-string">"foo"</span>: <span class="hljs-string">"http://example.org/foo"</span>}
@@ -2361,9 +2445,9 @@ as2-date-time    = full-date <span class="hljs-string">"T"</span> as2-full-time
       </p>
 
       <figure id="fig-the-reserialized-compacted-form">
-        <figcaption>Fig. <span class="figno">30</span> <span class="fig-title">The reserialized compacted form:</span></figcaption>
+        <figcaption>Fig. <span class="figno">33</span> <span class="fig-title">The reserialized compacted form:</span></figcaption>
         <div class="example">
-          <div class="example-title marker"><span>Example 28</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 31</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">"Note"</span>,
   <span class="hljs-string">"content"</span>: <span class="hljs-string">"This is a simple note"</span>,
@@ -2769,17 +2853,18 @@ profile-URI   = URI</span></pre> The "URI" in the above grammar refers to the "U
     </p>
 
     <figure id="fig-a-series-of-activities-creating-editing-and-deleting-a-note.x">
-      <figcaption>Fig. <span class="figno">31</span> <span class="fig-title">A series of activities; creating, editing, and deleting a note.</span></figcaption>
+      <figcaption>Fig. <span class="figno">34</span> <span class="fig-title">A series of activities; creating, editing, and deleting a note.</span></figcaption>
       <div id="ex27-jsonld" style="display: block;">
         <div class="example">
-          <div class="example-title marker"><span>Example 29</span></div><pre class="highlight json hljs xquery">{
+          <div class="example-title marker"><span>Example 32</span></div><pre class="highlight json hljs xquery">{
   <span class="hljs-string">"@context"</span>: [
     <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
     {
       <span class="hljs-string">"oa"</span>: <span class="hljs-string">"http://www.w3.org/ns/oa#"</span>,
       <span class="hljs-string">"prov"</span>: <span class="hljs-string">"http://www.w3.org/ns/prov#"</span>,
-      <span class="hljs-string">"oa:created"</span>: {
-        <span class="hljs-string">"@id"</span>: <span class="hljs-string">"oa:created"</span>,
+      <span class="hljs-string">"dcterms"</span>: <span class="hljs-string">"http://purl.org/dc/terms/"</span>,
+      <span class="hljs-string">"dcterms:created"</span>: {
+        <span class="hljs-string">"@id"</span>: <span class="hljs-string">"dcterms:created"</span>,
         <span class="hljs-string">"@type"</span>: <span class="hljs-string">"xsd:dateTime"</span>
       }
     }
@@ -2805,21 +2890,21 @@ profile-URI   = URI</span></pre> The "URI" in the above grammar refers to the "U
     },
     {
       <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/activity/20150101000059"</span>,
-      <span class="hljs-string">"type"</span>: [ <span class="hljs-string">"Update"</span>, <span class="hljs-string">"prov:Activity"</span>, <span class="hljs-string">"oa:Annotate"</span> ],
+      <span class="hljs-string">"type"</span>: [ <span class="hljs-string">"Update"</span>, <span class="hljs-string">"prov:Activity"</span>, <span class="hljs-string">"oa:Annotation"</span> ],
       <span class="hljs-string">"summary"</span>: <span class="hljs-string">"Eric edited a note."</span>,
-      <span class="hljs-string">"oa:created"</span>: <span class="hljs-string">"2015-01-01T00:00:59Z"</span>,
-      <span class="hljs-string">"oa:creator"</span>: <span class="hljs-string">"http://example.org/#eric"</span>,
+      <span class="hljs-string">"dcterms:created"</span>: <span class="hljs-string">"2015-01-01T00:00:59Z"</span>,
+      <span class="hljs-string">"dcterms:creator"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/#eric"</span> },
       <span class="hljs-string">"oa:hasBody"</span>: {
         <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/entry/20150101000059"</span>,
         <span class="hljs-string">"type"</span>: [ <span class="hljs-string">"Note"</span>, <span class="hljs-string">"prov:Entity"</span> ],
         <span class="hljs-string">"content"</span>: <span class="hljs-string">"Remember... all I'm offering is the truth. Nothing more."</span>,
-        <span class="hljs-string">"prov:wasAttributedTo"</span>: <span class="hljs-string">"http://example.org/#eric"</span>,
-        <span class="hljs-string">"prov:wasRevisionOf"</span>: <span class="hljs-string">"http://example.org/entry/20150101000000"</span>
+        <span class="hljs-string">"prov:wasAttributedTo"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/#eric"</span> },
+        <span class="hljs-string">"prov:wasRevisionOf"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/entry/20150101000000"</span> }
       },
-      <span class="hljs-string">"oa:hasTarget"</span>: <span class="hljs-string">"http://example.org/entry/20150101000000"</span>,
-      <span class="hljs-string">"oa:motivatedBy"</span>: <span class="hljs-string">"oa:editing"</span>,
-      <span class="hljs-string">"prov:generated"</span>: <span class="hljs-string">"http://example.org/entry/20150101000059"</span>,
-      <span class="hljs-string">"prov:wasInformedBy"</span>: <span class="hljs-string">"http://example.org/activity/20150101000000"</span>
+      <span class="hljs-string">"oa:hasTarget"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/entry/20150101000000"</span> },
+      <span class="hljs-string">"oa:motivatedBy"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"oa:editing"</span> },
+      <span class="hljs-string">"prov:generated"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/entry/20150101000059"</span> },
+      <span class="hljs-string">"prov:wasInformedBy"</span>: { <span class="hljs-string">"@id"</span>: <span class="hljs-string">"http://example.org/activity/20150101000000"</span> }
     },
     {
       <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://example.org/activity/20150101010101"</span>,
@@ -2843,21 +2928,41 @@ profile-URI   = URI</span></pre> The "URI" in the above grammar refers to the "U
     <p><em>This section is non-normative.</em></p>
 
     <p>
-      The following notable changes have been made to this document since the previous working draft of 2016-07-12.
+      The following notable changes have been made to this document since the previous candidate recommendation of <a href="https://www.w3.org/TR/2016/CR-activitystreams-core-20160906/#changelog">2016-09-06</a>.
     </p>
 
     <ul>
       <li>
-        Updated recommendations for bi-directional text.
+        Removed a reference to outdated requirements for serialization.
       </li>
       <li>
-        Updated context URL to https: with http: as a fallback.
+        Used 'type' consistently in document.
       </li>
       <li>
-        Corrected examples in Chinese and Spanish.
+        Noted that <code>OrderedCollectionPages</code> <em class="rfc2119" title="SHOULD">SHOULD</em> be used with an <code>OrderedCollection</code>.
       </li>
       <li>
-        Marked option to leave out <code>@language</code> as at risk.
+        Changed vague language for usage of <code>OrderedCollection</code> to
+        <em class="rfc2119" title="MAY">MAY</em>.
+      </li>
+      <li>
+        Relax requirements for <code>name</code> property from <em class="rfc2119" title="SHOULD">SHOULD</em> to <em class="rfc2119" title="MAY">MAY</em>, and recommend using <code>summary</code> as a fallback when a name has not been provided by a user.
+      </li>
+      <li>
+        Link to errata document.
+      </li>
+      <li>
+        Reference and link to Social Web Protocols document.
+      </li>
+      <li>
+        Provide examples of using <code>@context</code> property as a string, object or array.
+      </li>
+      <li>
+        Added recommendation that the language of natural language properties
+        <em class="rfc2119" title="SHOULD">SHOULD</em> be specified when it is known.
+      </li>
+      <li>
+        Link to extensions section of namespace document.
       </li>
     </ul>
 
@@ -2868,11 +2973,20 @@ profile-URI   = URI</span></pre> The "URI" in the above grammar refers to the "U
     <h2 id="h-tof" resource="#h-tof"><span property="xhv:role" resource="xhv:heading"><span class="secno">E. </span>Table of Figures</span>
     </h2>
     <ul class="tof">
-      <li class="tofline"><a class="tocxref" href="#fig-expresses-the-statement-http-www.test.example-martin-created-http-example.org-foo.jpg-.-no-additional-detail-is-given.x">Fig. <span class="figno">1</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-document-providing-a-context-as-a-string.x">Fig. <span class="figno">1</span> <span class="fig-title">
+              Document providing a context as a string.
+            </span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-document-providing-context-as-an-object.x">Fig. <span class="figno">2</span> <span class="fig-title">
+              Document providing context as an object.
+            </span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-document-providing-context-as-an-array.x">Fig. <span class="figno">3</span> <span class="fig-title">
+              Document providing context as an array.
+            </span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-expresses-the-statement-http-www.test.example-martin-created-http-example.org-foo.jpg-.-no-additional-detail-is-given.x">Fig. <span class="figno">4</span> <span class="fig-title">
     Expresses the statement <code>'http://www.test.example/martin' created
     'http://example.org/foo.jpg'</code>.  No additional detail is given.
   </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-expresses-the-statement-martin-smith-added-an-article-to-the-blog-martin-s-blog-at-3-04-pm-utc-on-february-10-2015.-some-additional-details-about-the-article-actor-and-target-blog-are-given-using-properties-defined-by-the-activity-streams-2.0-vocabulary.x">Fig. <span class="figno">2</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-expresses-the-statement-martin-smith-added-an-article-to-the-blog-martin-s-blog-at-3-04-pm-utc-on-february-10-2015.-some-additional-details-about-the-article-actor-and-target-blog-are-given-using-properties-defined-by-the-activity-streams-2.0-vocabulary.x">Fig. <span class="figno">5</span> <span class="fig-title">
         Expresses the statement "Martin Smith added an article to the blog
         'Martin's Blog' at 3:04 PM UTC on February 10, 2015."  Some additional
         details about the article, actor and target blog are given using
@@ -2880,70 +2994,70 @@ profile-URI   = URI</span></pre> The "URI" in the above grammar refers to the "U
         <span>Activity Streams 2.0
         Vocabulary</span>.
       </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-more-extensive-single-entry-activity-stream-follows.x">Fig. <span class="figno">3</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-a-more-extensive-single-entry-activity-stream-follows.x">Fig. <span class="figno">6</span> <span class="fig-title">
         A more extensive, single-entry "Activity Stream" follows.
       </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">Fig. <span class="figno">4</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">Fig. <span class="figno">7</span> <span class="fig-title">
     Following is an example Object that uses the <code>id</code> and
     <code>type</code> properties to express the global identifier and object
     type:
   </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-an-object-that-is-both-a-place-and-a-gr-location">Fig. <span class="figno">5</span> <span class="fig-title">An Object that is both a <code>Place</code> and a <code>gr:Location</code>:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-note-with-a-name-defined-by-the-author">Fig. <span class="figno">6</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-an-object-that-is-both-a-place-and-a-gr-location">Fig. <span class="figno">8</span> <span class="fig-title">An Object that is both a <code>Place</code> and a <code>gr:Location</code>:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-a-note-with-a-name-defined-by-the-author">Fig. <span class="figno">9</span> <span class="fig-title">
            A note with a name defined by the author
         </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-note-with-an-automatically-generated-summary">Fig. <span class="figno">7</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-a-note-with-an-automatically-generated-summary">Fig. <span class="figno">10</span> <span class="fig-title">
              A note with an automatically-generated summary
           </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-to-reference-a-single-image-without-any-additional-metadata-a-direct-association-can-be-expressed-as-a-json-string-containing-an-absolute-iri.x">Fig. <span class="figno">8</span> <span class="fig-title">To reference a single image without any additional
+      <li class="tofline"><a class="tocxref" href="#fig-to-reference-a-single-image-without-any-additional-metadata-a-direct-association-can-be-expressed-as-a-json-string-containing-an-absolute-iri.x">Fig. <span class="figno">11</span> <span class="fig-title">To reference a single image without any additional
       metadata, a direct association can be expressed as a JSON string
       containing an absolute IRI.</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-alternatively-if-additional-metadata-is-required-such-as-the-mime-content-type-of-the-referenced-resource-a-link-can-be-used">Fig. <span class="figno">9</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-alternatively-if-additional-metadata-is-required-such-as-the-mime-content-type-of-the-referenced-resource-a-link-can-be-used">Fig. <span class="figno">12</span> <span class="fig-title">
         Alternatively, if additional metadata is required (such as the MIME
         content type of the referenced resource) a <span>Link</span> can be used:
       </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-if-more-than-one-value-is-to-be-expressed-a-json-array-with-a-mix-of-strings-and-links-can-be-used">Fig. <span class="figno">10</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-if-more-than-one-value-is-to-be-expressed-a-json-array-with-a-mix-of-strings-and-links-can-be-used">Fig. <span class="figno">13</span> <span class="fig-title">
         If more than one value is to be expressed, A JSON Array with a
         mix of strings and <span>Link</span>s can be used:
       </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-example-11-context-https-www.w3.org-ns-activitystreams-type-application-id-http-example.org-application-123-name-my-application-image-http-example.org-application-abc.gif-type-link-href-http-example.org-application-123.png-mediatype-image-png-rel-thumbnail">Fig. <span class="figno">11</span> <span class="fig-title"></span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-an-activity-with-a-person-actor-extended-with-vcard-properties">Fig. <span class="figno">12</span> <span class="fig-title">An Activity with a Person actor extended with VCard properties:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-following-example-illustrates-a-simple-activity">Fig. <span class="figno">13</span> <span class="fig-title">The following example illustrates a simple Activity:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-an-activity-that-is-both-a-like-and-a-http-schema.org-likeaction">Fig. <span class="figno">14</span> <span class="fig-title">An Activity that is both a
+      <li class="tofline"><a class="tocxref" href="#fig-example-14-context-https-www.w3.org-ns-activitystreams-type-application-id-http-example.org-application-123-name-exampletron-3000-image-http-example.org-application-abc.gif-type-link-href-http-example.org-application-123.png-mediatype-image-png-rel-thumbnail">Fig. <span class="figno">14</span> <span class="fig-title"></span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-an-activity-with-a-person-actor-extended-with-vcard-properties">Fig. <span class="figno">15</span> <span class="fig-title">An Activity with a Person actor extended with VCard properties:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-the-following-example-illustrates-a-simple-activity">Fig. <span class="figno">16</span> <span class="fig-title">The following example illustrates a simple Activity:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-an-activity-that-is-both-a-like-and-a-http-schema.org-likeaction">Fig. <span class="figno">17</span> <span class="fig-title">An Activity that is both a
        <code><span>Like</span></code>
        and a <code>http://schema.org/LikeAction</code>:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-unordered-collection">Fig. <span class="figno">15</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-unordered-collection">Fig. <span class="figno">18</span> <span class="fig-title">
           The following is a simple unordered collection:
         </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-ordered-collection">Fig. <span class="figno">16</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-ordered-collection">Fig. <span class="figno">19</span> <span class="fig-title">
           The following is a simple ordered collection:
         </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-an-illustration-of-the-relationship-between-collection-orderedcollection-collectionpage-and-orderedcollectionpage">Fig. <span class="figno">17</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-an-illustration-of-the-relationship-between-collection-orderedcollection-collectionpage-and-orderedcollectionpage">Fig. <span class="figno">20</span> <span class="fig-title">
             An illustration of the relationship between <code>Collection</code>,
             <code>OrderedCollection</code>, <code>CollectionPage</code>, and
             <code>OrderedCollectionPage</code>:
           </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-visualization-of-the-collection-paging-model">Fig. <span class="figno">18</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-a-visualization-of-the-collection-paging-model">Fig. <span class="figno">21</span> <span class="fig-title">
             A visualization of the Collection paging model:
           </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-unordered-collection-with-paging">Fig. <span class="figno">19</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-the-following-is-a-simple-unordered-collection-with-paging">Fig. <span class="figno">22</span> <span class="fig-title">
           The following is a simple unordered collection with paging:
         </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-single-name-string-value-without-language-information">Fig. <span class="figno">20</span> <span class="fig-title">A single name String value without language information:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-multiple-language-specific-values">Fig. <span class="figno">21</span> <span class="fig-title">Multiple, language-specific values:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-using-the-und-language-tag">Fig. <span class="figno">22</span> <span class="fig-title">Using the <code>"und"</code> language tag:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-specifying-the-default-language-within-the-json-ld-context">Fig. <span class="figno">23</span> <span class="fig-title">
+      <li class="tofline"><a class="tocxref" href="#fig-a-single-name-string-value-without-language-information">Fig. <span class="figno">23</span> <span class="fig-title">A single name String value without language information:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-multiple-language-specific-values">Fig. <span class="figno">24</span> <span class="fig-title">Multiple, language-specific values:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-using-the-und-language-tag">Fig. <span class="figno">25</span> <span class="fig-title">Using the <code>"und"</code> language tag:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-specifying-the-default-language-within-the-json-ld-context">Fig. <span class="figno">26</span> <span class="fig-title">
             Specifying the default <code>"@language"</code> within the JSON-LD
             <code>@context</code>:
           </span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-geojson-point-coordinates">Fig. <span class="figno">24</span> <span class="fig-title">GeoJSON Point Coordinates:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-equivalent-place-alternative">Fig. <span class="figno">25</span> <span class="fig-title">The Equivalent <code>Place</code> alternative:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-geojson-polygon-coordinates">Fig. <span class="figno">26</span> <span class="fig-title">GeoJSON Polygon Coordinates:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-equivalent-geosparql-well-known-text-alternative">Fig. <span class="figno">27</span> <span class="fig-title">The Equivalent GeoSparql Well-Known-Text alternative:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-json-ld-compact-uri-definition">Fig. <span class="figno">28</span> <span class="fig-title">A JSON-LD Compact URI definition</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-simple-extended-object">Fig. <span class="figno">29</span> <span class="fig-title">A simple extended Object</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-the-reserialized-compacted-form">Fig. <span class="figno">30</span> <span class="fig-title">The reserialized compacted form:</span></a></li>
-      <li class="tofline"><a class="tocxref" href="#fig-a-series-of-activities-creating-editing-and-deleting-a-note.x">Fig. <span class="figno">31</span> <span class="fig-title">A series of activities; creating, editing, and deleting a note.</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-geojson-point-coordinates">Fig. <span class="figno">27</span> <span class="fig-title">GeoJSON Point Coordinates:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-the-equivalent-place-alternative">Fig. <span class="figno">28</span> <span class="fig-title">The Equivalent <code>Place</code> alternative:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-geojson-polygon-coordinates">Fig. <span class="figno">29</span> <span class="fig-title">GeoJSON Polygon Coordinates:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-the-equivalent-geosparql-well-known-text-alternative">Fig. <span class="figno">30</span> <span class="fig-title">The Equivalent GeoSparql Well-Known-Text alternative:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-a-json-ld-compact-uri-definition">Fig. <span class="figno">31</span> <span class="fig-title">A JSON-LD Compact URI definition</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-a-simple-extended-object">Fig. <span class="figno">32</span> <span class="fig-title">A simple extended Object</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-the-reserialized-compacted-form">Fig. <span class="figno">33</span> <span class="fig-title">The reserialized compacted form:</span></a></li>
+      <li class="tofline"><a class="tocxref" href="#fig-a-series-of-activities-creating-editing-and-deleting-a-note.x">Fig. <span class="figno">34</span> <span class="fig-title">A series of activities; creating, editing, and deleting a note.</span></a></li>
     </ul>
   </section>
 
