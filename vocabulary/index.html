@@ -153,115 +153,62 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       color: #999;
     }
   </style>
+  <title>Activity Vocabulary</title>
+
+
+
   <style>
-    /* --- ISSUES/NOTES --- */
-    
-    div.issue-title,
-    div.note-title,
-    div.ednote-title,
-    div.warning-title {
-      padding-right: 1em;
-      min-width: 7.5em;
-      color: #b9ab2d;
+    thead {
+      background: #005A9C;
+      color: white;
     }
     
-    div.issue-title {
-      color: #e05252;
+    thead th {
+      font-weight: normal;
     }
     
-    div.note-title,
-    div.ednote-title {
-      color: #2b2;
+    table,
+    td,
+    th {
+      border: 1px solid gray
     }
     
-    div.warning-title {
-      color: #f22;
+    table {
+      width: 100%;
     }
     
-    div.issue-title span,
-    div.note-title span,
-    div.ednote-title span,
-    div.warning-title span {
-      text-transform: uppercase;
-    }
-    
-    div.note,
-    div.issue,
-    div.ednote,
-    div.warning {
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-    
-    .note>p:first-child,
-    .ednote>p:first-child,
-    .issue>p:first-child,
-    .warning>p:first-child {
-      margin-top: 0
-    }
-    
-    .issue,
-    .note,
-    .ednote,
-    .warning {
-      padding: .5em;
-      border-left-width: .5em;
-      border-left-style: solid;
-    }
-    
-    div.issue,
-    div.note,
-    div.ednote,
-    div.warning {
-      padding: 1em 1.2em 0.5em;
-      margin: 1em 0;
-      position: relative;
-      clear: both;
-    }
-    
-    span.note,
-    span.ednote,
-    span.issue,
-    span.warning {
-      padding: .1em .5em .15em;
-    }
-    
-    .issue {
-      border-color: #e05252;
-      background: #fbe9e9;
-    }
-    
-    .note,
-    .ednote {
-      border-color: #52e052;
-      background: #e9fbe9;
-    }
-    
-    .warning {
-      border-color: #f11;
-      border-width: .2em;
-      border-style: solid;
-      background: #fbe9e9;
-    }
-    
-    .warning-title:before {
-      content: "⚠";
-      /*U+26A0 WARNING SIGN*/
-      font-size: 3em;
-      float: left;
-      height: 100%;
-      padding-right: .3em;
+    td {
       vertical-align: top;
-      margin-top: -0.5em;
+      padding: 5px;
     }
     
-    li.task-list-item {
+    .nanotabs>ul li {
+      float: left;
       list-style: none;
     }
     
-    input.task-list-item-checkbox {
-      margin: 0 0.35em 0.25em -1.6em;
-      vertical-align: middle;
+    .nanotabs>ul li a {
+      display: block;
+      padding: 4px 6px;
+      margin-right: 3px;
+      border-left: 1px solid #b9ab2d;
+      border-right: 1px solid #b9ab2d;
+      border-top: 1px solid #b9ab2d;
+      border-collapse: collapse;
+      background: #fcfaee;
+      color: #b9ab2d;
+      font-family: sans-serif;
+      text-decoration: none;
+    }
+    
+    .nanotabs>ul li a:hover {
+      background: #FFFCE5;
+      color: #550;
+    }
+    
+    .nanotabs>ul li a.selected {
+      background: #555;
+      color: #FFF;
     }
   </style>
   <style id="respec-mainstyle">
@@ -397,10 +344,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     .section dl.attrs dd,
     .section dl.eldef dd {
       margin-bottom: 0;
-    }
-    
-    .respec-hidden {
-      display: none;
     }
     
     #respec-ui {
@@ -640,6 +583,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x;
     }
     
+    @supports (text-decoration-style: wavy) {
+      .respec-offending-element {
+        background: none;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: red;
+      }
+    }
+    
     #issue-summary>ul,
     .respec-dfn-list {
       column-count: 2;
@@ -656,68 +608,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       }
     }
   </style>
-  <title>Activity Vocabulary</title>
-
-
-
-  <style>
-    thead {
-      background: #005A9C;
-      color: white;
-    }
-    
-    thead th {
-      font-weight: normal;
-    }
-    
-    table,
-    td,
-    th {
-      border: 1px solid gray
-    }
-    
-    table {
-      width: 100%;
-    }
-    
-    td {
-      vertical-align: top;
-      padding: 5px;
-    }
-    
-    .nanotabs>ul li {
-      float: left;
-      list-style: none;
-    }
-    
-    .nanotabs>ul li a {
-      display: block;
-      padding: 4px 6px;
-      margin-right: 3px;
-      border-left: 1px solid #b9ab2d;
-      border-right: 1px solid #b9ab2d;
-      border-top: 1px solid #b9ab2d;
-      border-collapse: collapse;
-      background: #fcfaee;
-      color: #b9ab2d;
-      font-family: sans-serif;
-      text-decoration: none;
-    }
-    
-    .nanotabs>ul li a:hover {
-      background: #FFFCE5;
-      color: #550;
-    }
-    
-    .nanotabs>ul li a.selected {
-      background: #555;
-      color: #FFF;
-    }
-  </style>
-  <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-CR">
   <link rel="canonical" href="https://www.w3.org/TR/activitystreams-vocabulary/">
-  <meta name="generator" content="ReSpec 10.5.3">
+  <meta name="generator" content="ReSpec 11.2.1">
   <script id="initialUserConfig" type="application/json">
     {
       "specStatus": "CR",
@@ -799,16 +692,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     }
   </script>
 </head>
-<body aria-busy="false" class="h-entry" role="document" id="respecDocument">
+<body aria-busy="false" class="h-entry" id="respecDocument">
   <div class="head" role="contentinfo" id="respecHeader">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Activity Vocabulary</h1>
-    <h2 id="w3c-candidate-recommendation-28-february-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2017-02-28">28 February 2017</time></h2>
+    <h2 id="w3c-candidate-recommendation-28-march-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2017-03-28">28 March 2017</time></h2>
     <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170228/">https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170228/</a></dd>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170328/">https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170328/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/activitystreams-vocabulary/">https://www.w3.org/TR/activitystreams-vocabulary/</a></dd>
       <dt>Latest editor's draft:</dt>
@@ -911,7 +804,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
               6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
     </p>
-    <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2015/Process-20150901/">1 September 2015 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+    <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
     </p>
 
   </section>
@@ -921,7 +814,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a>
         <ol class="toc">
           <li class="tocline"><a href="#termconventions" class="tocxref"><span class="secno">1.1 </span>Conventions</a></li>
-          <li class="tocline"><a href="#atrisk" class="tocxref"><span class="secno">1.2 </span>At Risk features</a></li>
         </ol>
       </li>
       <li class="tocline"><a href="#types" class="tocxref"><span class="secno">2. </span>Core Types</a></li>
@@ -1010,13 +902,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         The examples included in this document use the normative JSON serialization defined by this specification.
       </p>
 
-    </section>
-
-    <section id="atrisk" typeof="bibo:Chapter" resource="#atrisk" property="bibo:hasPart">
-      <h3 id="h-atrisk" resource="#h-atrisk"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>At Risk features</span>
-      </h3>
-      <p>The Working Group has marked some features as
-        <a href="https://www.w3.org/TR/activitystreams-core/#atrisk">At Risk</a> and may seek to advance the specification with the removal of these terms if insufficient implementation experience can be gathered.</p>
     </section>
 
   </section>
@@ -3218,13 +3103,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <div class="example-title marker"><span>Example 47</span></div>
                   <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
   <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is a contact of John"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is an acquaintance of John"</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
   <span class="hljs-attr">"subject"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
   },
-  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
+  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/acquaintanceOf"</span>,
   <span class="hljs-attr">"object"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John"</span>
@@ -3244,12 +3129,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <p>
                 See <a href="#connections" class="sec-ref"><span class="secno">5.2</span> <span class="sec-title">Representing Relationships Between Entities</span></a> for additional information.
               </p>
-              <div class="note">
-                <div class="note-title marker" aria-level="4" role="heading" id="h-note1"><span>Note</span><span style="text-transform: none">: At Risk</span></div>
-                <p class="">
-                  The Relationship type is At Risk. The Working Group believes this type to be useful and well-founded. However, if insufficient evidence of implementation can be obtained during the Candidate Recommendation period then the Working Group may seek to advance the specification with this type omitted.
-                </p>
-              </div>
             </td>
           </tr>
           <tr>
@@ -3830,8 +3709,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <code><a href="#dfn-width" class="internalDFN" data-link-type="dfn">width</a></code> |
       <code><a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> |
       <code><a data-lt="relationship-term" href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a></code> |
-      <code><a href="#dfn-describes" class="internalDFN" data-link-type="dfn">describes</a></code>
-      <code><a href="#dfn-formertype" class="internalDFN" data-link-type="dfn">formerType</a></code>
+      <code><a href="#dfn-describes" class="internalDFN" data-link-type="dfn">describes</a></code> |
+      <code><a href="#dfn-formertype" class="internalDFN" data-link-type="dfn">formerType</a></code> |
       <code><a href="#dfn-deleted" class="internalDFN" data-link-type="dfn">deleted</a></code>
     </p>
 
@@ -6642,13 +6521,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 139</span></div>
                 <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
   <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is a contact of John's"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is an acquaintance of John's"</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
   <span class="hljs-attr">"subject"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
   },
-  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
+  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/acquaintanceOf"</span>,
   <span class="hljs-attr">"object"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John"</span>
@@ -6691,13 +6570,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <div class="example-title marker"><span>Example 140</span></div>
                 <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
   <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is a contact of John's"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is an acquaintance of John's"</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
   <span class="hljs-attr">"subject"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
   },
-  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
+  <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/acquaintanceOf"</span>,
   <span class="hljs-attr">"object"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John"</span>
@@ -6997,37 +6876,37 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <div class="example">
           <div class="example-title marker"><span>Example 145</span></div>
           <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally's friends list"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
-<span class="hljs-attr">"items"</span>: [
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is following Joe"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
- <span class="hljs-attr">"subject"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
-   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
- },
- <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsFollowing"</span>,
- <span class="hljs-attr">"object"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
-   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Joe"</span>
- }
-},
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is a contact of Jane"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
- <span class="hljs-attr">"subject"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
-   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
- },
- <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
- <span class="hljs-attr">"object"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
-   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jane"</span>
- }
-}
-]
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally's friends list"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is influenced by Joe"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
+      <span class="hljs-attr">"subject"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
+      },
+      <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/influencedBy"</span>,
+      <span class="hljs-attr">"object"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Joe"</span>
+      }
+    },
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally is a friend of Jane"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
+      <span class="hljs-attr">"subject"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Sally"</span>
+      },
+      <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/friendOf"</span>,
+      <span class="hljs-attr">"object"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Person"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jane"</span>
+      }
+    }
+  ]
 }</pre>
         </div>
       </div>
@@ -7050,17 +6929,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <div class="example">
           <div class="example-title marker"><span>Example 146</span></div>
           <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally became a friend of Matt"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Create"</span>,
-<span class="hljs-attr">"actor"</span>: <span class="hljs-string">"http://sally.example.org"</span>,
-<span class="hljs-attr">"object"</span>: {
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
-<span class="hljs-attr">"subject"</span>: <span class="hljs-string">"http://sally.example.org"</span>,
-<span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
-<span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://matt.example.org"</span>,
-<span class="hljs-attr">"startTime"</span>: <span class="hljs-string">"2015-04-21T12:34:56"</span>
-}
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally became a friend of Matt"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Create"</span>,
+  <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"http://sally.example.org"</span>,
+  <span class="hljs-attr">"object"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
+    <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"http://sally.example.org"</span>,
+    <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/friendOf"</span>,
+    <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://matt.example.org"</span>,
+    <span class="hljs-attr">"startTime"</span>: <span class="hljs-string">"2015-04-21T12:34:56"</span>
+  }
 }</pre>
         </div>
       </div>
@@ -7070,21 +6949,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <p>
-        The Activity Streams vocabulary defines four normative values for use with the relationship property.
-      </p>
-      <ul>
-        <li><code>IsFollowing</code> The subject is following the object. This is a unidirectional relationship.</li>
-        <li><code>IsFollowedBy</code> The object is following the subject. This is a unidirectional relationship.</li>
-        <li><code>IsContact</code> The subject and object have a mutual relationship.
-        </li>
-        <li><code>IsMember</code> The subject is a member of the object, typically a Group or Organization.</li>
-      </ul>
-      <p></p>
-
-      <p>
         Implementations may reuse existing vocabularies that have been developed for the purpose of describing relationships, or create their own guided by requirements of their particular implementation. Existing vocabularies include the "
         <a href="http://xmlns.com/foaf/spec/">Friend of a Friend</a>" and "
-        <a href="http://vocab.org/relationship/.html">Relationship</a>" vocabularies.
+        <a href="http://vocab.org/relationship/">Relationship</a>" vocabularies.
       </p>
 
       <section class="informative" id="modeling-friend-requests" typeof="bibo:Chapter" resource="#modeling-friend-requests" property="bibo:hasPart">
@@ -7105,20 +6972,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <div class="example">
             <div class="example-title marker"><span>Example 147</span></div>
             <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
-<span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally requested to be a friend of John"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Offer"</span>,
-<span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
-<span class="hljs-attr">"object"</span>: {
-<span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally and John's friendship"</span>,
-<span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
-<span class="hljs-attr">"subject"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
-<span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"IsContact"</span>,
-<span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:john@example.org"</span>
-},
-<span class="hljs-attr">"target"</span>: <span class="hljs-string">"acct:john@example.org"</span>
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally requested to be a friend of John"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Offer"</span>,
+  <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
+  <span class="hljs-attr">"object"</span>: {
+    <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally and John's friendship"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Relationship"</span>,
+    <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
+    <span class="hljs-attr">"relationship"</span>: <span class="hljs-string">"http://purl.org/vocab/relationship/friendOf"</span>,
+    <span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:john@example.org"</span>
+  },
+  <span class="hljs-attr">"target"</span>: <span class="hljs-string">"acct:john@example.org"</span>
 }</pre>
           </div>
         </div>
@@ -7131,66 +6998,66 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <div class="example">
             <div class="example-title marker"><span>Example 148</span></div>
             <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally and John's relationship history"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
-<span class="hljs-attr">"items"</span>: [
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John accepted Sally's friend request"</span>,
- <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/122"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Accept"</span>,
- <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
- <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
- <span class="hljs-attr">"inReplyTo"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
- <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
- <span class="hljs-attr">"result"</span>: [
-   <span class="hljs-string">"http://example.org/activities/123"</span>,
-   <span class="hljs-string">"http://example.org/activities/124"</span>,
-   <span class="hljs-string">"http://example.org/activities/125"</span>,
-   <span class="hljs-string">"http://example.org/activities/126"</span>
- ]
-},
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John followed Sally"</span>,
- <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/123"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Follow"</span>,
- <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
- <span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
- <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
-},
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally followed John"</span>,
- <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/124"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Follow"</span>,
- <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
- <span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
- <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
-},
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John added Sally to his friends list"</span>,
- <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/125"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Add"</span>,
- <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
- <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
- <span class="hljs-attr">"target"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
-   <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John's Connections"</span>
- },
- <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
-},
-{
- <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally added John to her friends list"</span>,
- <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/126"</span>,
- <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Add"</span>,
- <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
- <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
- <span class="hljs-attr">"target"</span>: {
-   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
-   <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally's Connections"</span>
- },
- <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
-}
-]
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally and John's relationship history"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John accepted Sally's friend request"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/122"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Accept"</span>,
+      <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
+      <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
+      <span class="hljs-attr">"inReplyTo"</span>: <span class="hljs-string">"http://example.org/connection-requests/123"</span>,
+      <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
+      <span class="hljs-attr">"result"</span>: [
+        <span class="hljs-string">"http://example.org/activities/123"</span>,
+        <span class="hljs-string">"http://example.org/activities/124"</span>,
+        <span class="hljs-string">"http://example.org/activities/125"</span>,
+        <span class="hljs-string">"http://example.org/activities/126"</span>
+      ]
+    },
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John followed Sally"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/123"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Follow"</span>,
+      <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
+      <span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
+      <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
+    },
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally followed John"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/124"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Follow"</span>,
+      <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
+      <span class="hljs-attr">"object"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
+      <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
+    },
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John added Sally to his friends list"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/125"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Add"</span>,
+      <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:john@example.org"</span>,
+      <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
+      <span class="hljs-attr">"target"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
+        <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"John's Connections"</span>
+      },
+      <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
+    },
+    {
+      <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally added John to her friends list"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://example.org/activities/126"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Add"</span>,
+      <span class="hljs-attr">"actor"</span>: <span class="hljs-string">"acct:sally@example.org"</span>,
+      <span class="hljs-attr">"object"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>,
+      <span class="hljs-attr">"target"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Collection"</span>,
+        <span class="hljs-attr">"summary"</span>: <span class="hljs-string">"Sally's Connections"</span>
+      },
+      <span class="hljs-attr">"context"</span>: <span class="hljs-string">"http://example.org/connections/123"</span>
+    }
+  ]
 }</pre>
           </div>
         </div>
@@ -7233,9 +7100,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <div class="example">
           <div class="example-title marker"><span>Example 149</span></div>
           <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Place"</span>,
-<span class="hljs-attr">"name"</span>: <span class="hljs-string">"San Francisco, CA"</span>
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Place"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"San Francisco, CA"</span>
 }</pre>
         </div>
       </div>
@@ -7248,11 +7115,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <div class="example">
           <div class="example-title marker"><span>Example 150</span></div>
           <pre class="highlight json hljs" aria-busy="false" aria-live="polite">{
-<span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
-<span class="hljs-attr">"type"</span>: <span class="hljs-string">"Place"</span>,
-<span class="hljs-attr">"name"</span>: <span class="hljs-string">"San Francisco, CA"</span>,
-<span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"122.4167"</span>,
-<span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"37.7833"</span>
+  <span class="hljs-attr">"@context"</span>: <span class="hljs-string">"https://www.w3.org/ns/activitystreams"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Place"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"San Francisco, CA"</span>,
+  <span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"122.4167"</span>,
+  <span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"37.7833"</span>
 }</pre>
         </div>
       </div>
@@ -7881,25 +7748,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p><em>This section is non-normative.</em></p>
 
     <p>
-      The following notable changes have been made to this document since the previous candidate recommendation of <a href="https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20160906/#changelog">2016-09-06</a>.
+      The following notable changes have been made to this document since the previous candidate recommendation of <a href="https://www.w3.org/TR/2016/CR-activitystreams-vocabulary-20161215/#changelog">2016-12-15</a>.
     </p>
 
     <ul>
       <li>
-        The term "type" is used uniformly instead of the term "class". The two terms had been used interchangeably in earlier versions.
+        Removed the four normative <code><a href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a></code> values for lack of implementation. Changed examples to use terms from the
+        <a href="http://vocab.org/relationship/">Relationship</a> vocabulary.
       </li>
       <li>
-        Examples were changed to reflect the changed requirement for the
-        <a href="#dfn-name" class="internalDFN" data-link-type="dfn">name</a> property and the use of the <a href="#dfn-summary" class="internalDFN" data-link-type="dfn">summary</a> property as a fallback.
+        Removed process sections, especially those noting exit criteria and at-risk features.
       </li>
       <li>
-        Linked to the errata list for this document.
+        Fixed a typo in <code><a href="#dfn-deleted" class="internalDFN" data-link-type="dfn">deleted</a></code> range.
       </li>
       <li>
-        Changed some example <a href="#dfn-name" class="internalDFN" data-link-type="dfn">name</a> properties to sound more like they had been added by people intentionally, to distinguish them from automatically-generated <a href="#dfn-summary" class="internalDFN" data-link-type="dfn">summary</a> properties.
+        Added <code>datetime</code> and <code>boolean</code> to range of
+        <code><a href="#dfn-closed" class="internalDFN" data-link-type="dfn">closed</a></code> property.
       </li>
       <li>
-        Added a clarifying note about the properties of a <a href="#dfn-link" class="internalDFN" data-link-type="dfn">Link</a> object.
+        Set the domain of the <code><a href="#dfn-first" class="internalDFN" data-link-type="dfn">first</a></code>,
+        <code><a href="#dfn-last" class="internalDFN" data-link-type="dfn">last</a></code>, and <code><a href="#dfn-current" class="internalDFN" data-link-type="dfn">current</a></code> properties to
+        <code><a href="#dfn-collection" class="internalDFN" data-link-type="dfn">Collection</a></code>.
       </li>
     </ul>
 
