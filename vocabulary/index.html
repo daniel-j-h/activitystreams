@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" typeof="bibo:Document w3p:CR" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<html lang="en" dir="ltr" typeof="bibo:Document w3p:REC" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -229,13 +229,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       color: #900;
     }
 
-    h1 acronym,
-    h2 acronym,
-    h3 acronym,
-    h4 acronym,
-    h5 acronym,
-    h6 acronym,
-    a acronym,
     h1 abbr,
     h2 abbr,
     h3 abbr,
@@ -346,270 +339,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       margin-bottom: 0;
     }
 
-    #respec-ui {
-      position: fixed;
-      display: flex;
-      flex-direction: row-reverse;
-      top: 20px;
-      right: 20px;
-      width: 202px;
-      text-align: right;
-      z-index: 9000;
-    }
-
-    #respec-pill,
-    .respec-info-button {
-      background: #fff;
-      height: 2.5em;
-      color: rgb(120, 120, 120);
-      border: 1px solid #ccc;
-      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
-    }
-
-    .respec-info-button {
-      border: none;
-      opacity: .75;
-      border-radius: 2em;
-      margin-right: 1em;
-      min-width: 3.5em;
-    }
-
-    .respec-info-button:focus,
-    .respec-info-button:hover {
-      opacity: 1;
-      transition: opacity .2s;
-    }
-
-    #respec-pill:disabled {
-      font-size: 2.8px;
-      text-indent: -9999em;
-      border-top: 1.1em solid rgba(40, 40, 40, 0.2);
-      border-right: 1.1em solid rgba(40, 40, 40, 0.2);
-      border-bottom: 1.1em solid rgba(40, 40, 40, 0.2);
-      border-left: 1.1em solid #ffffff;
-      transform: translateZ(0);
-      animation: respec-spin .5s infinite linear;
-      box-shadow: none;
-    }
-
-    #respec-pill:disabled,
-    #respec-pill:disabled:after {
-      border-radius: 50%;
-      width: 10em;
-      height: 10em;
-    }
-
-    @keyframes respec-spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    #respec-pill:hover,
-    #respec-pill:focus {
-      color: rgb(0, 0, 0);
-      background-color: rgb(245, 245, 245);
-      transition: color .2s;
-    }
-
-    #respec-menu {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: #fff;
-      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
-      width: 200px;
-      display: none;
-      text-align: left;
-      margin-top: 32px;
-      font-size: .8em;
-    }
-
-    #respec-menu li {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .respec-save-buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(47%, 2fr));
-      grid-gap: .5cm;
-      padding: .5cm;
-    }
-
-    .respec-save-button:link {
-      padding-top: 16px;
-      color: rgb(240, 240, 240);
-      background: rgb(42, 90, 168);
-      justify-self: stretch;
-      height: 1cm;
-      text-decoration: none;
-      text-align: center;
-      font-size: inherit;
-      border: none;
-      border-radius: 0.2cm;
-    }
-
-    .respec-save-button:link:hover {
-      color: white;
-      background: rgb(42, 90, 168);
-      padding: 0;
-      margin: 0;
-      border: 0;
-      padding-top: 16px;
-    }
-
-
-    #respec-ui button:focus,
-    #respec-pill:focus,
-    .respec-option:focus {
-      outline: 0;
-      outline-style: none;
-    }
-
-    #respec-pill-error {
-      background-color: red;
-      color: white;
-    }
-
-    #respec-pill-warning {
-      background-color: orange;
-      color: white;
-    }
-
-    .respec-warning-list,
-    .respec-error-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-family: sans-serif;
-      background-color: rgb(255, 251, 230);
-      font-size: .9em;
-    }
-
-    .respec-warning-list li,
-    .respec-error-list li {
-      padding: 0.4em 0.7em;
-    }
-
-    .respec-warning-list li::before {
-      content: "⚠️";
-      padding-right: .5em;
-    }
-
-    .respec-warning-list li {
-      color: rgb(92, 59, 0);
-      border-bottom: thin solid rgb(255, 245, 194);
-    }
-
-    .respec-error-list,
-    .respec-error-list li {
-      background-color: rgb(255, 240, 240);
-    }
-
-    .respec-error-list li::before {
-      content: "💥";
-      padding-right: .5em;
-    }
-
-    .respec-error-list li {
-      padding: 0.4em 0.7em;
-      color: rgb(92, 59, 0);
-      border-bottom: thin solid rgb(255, 215, 215);
-    }
-
-    #respec-overlay {
-      display: block;
-      opacity: 0;
-      position: fixed;
-      z-index: 10000;
-      top: 0px;
-      left: 0px;
-      height: 100%;
-      width: 100%;
-      background: #000;
-    }
-
-    .respec-modal {
-      display: block;
-      position: fixed;
-      opacity: 0;
-      z-index: 11000;
-      margin: auto;
-      top: 10%;
-      background: #fff;
-      border: 5px solid #666;
-      min-width: 20%;
-      width: 79%;
-      padding: 0;
-      max-height: 80%;
-      overflow-y: auto;
-      margin: 0 -.5cm
-    }
-
-    @media screen and (min-width: 78em) {
-      .respec-modal {
-        width: 62%;
-      }
-    }
-
-    .respec-modal h3 {
-      margin: 0;
-      padding: .2em;
-      text-align: center;
-      color: black;
-      background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 50%, rgba(204, 204, 204, 1) 100%);
-      font-size: 1em;
-    }
-
-    .respec-modal .inside p {
-      padding-left: 1cm;
-    }
-
-    #respec-menu button.respec-option {
-      background: white;
-      padding: 0 .2cm;
-      border: none;
-      width: 100%;
-      text-align: left;
-      font-size: inherit;
-      padding: 1.2em 1.2em;
-    }
-
-    #respec-menu button.respec-option:hover,
-    #respec-menu button:focus {
-      background-color: #eeeeee;
-    }
-
-    .respec-cmd-icon {
-      padding-right: .5em;
-    }
-
-    #respec-ui button.respec-option:last-child {
-      border: none;
-      border-radius: inherit;
-    }
-
-    .respec-offending-element {
-      display: inline-block;
-      position: relative;
-      background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x;
-    }
-
-    @supports (text-decoration-style: wavy) {
-      .respec-offending-element {
-        background: none;
-        text-decoration-line: underline;
-        text-decoration-style: wavy;
-        text-decoration-color: red;
-      }
-    }
-
     #issue-summary>ul,
     .respec-dfn-list {
       column-count: 2;
@@ -620,46 +349,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       list-style: none;
     }
 
-
-    .respec-button-copy-paste {
-      position: absolute;
-      display: block;
-      padding: 0px 8px;
-      height: 28px;
-      width: 40px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid rgb(144, 184, 222);
-      border-radius: 0px 0px 3px 0;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-appearance: none;
-      margin: 0px 127px;
-      border-left: 0;
-    }
-
-    p+.respec-button-copy-paste {
-      margin: 1px 127px;
-    }
-
     @media print {
       .removeOnSave {
         display: none;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-CR">
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-REC">
   <link rel="canonical" href="https://www.w3.org/TR/activitystreams-vocabulary/">
-  <meta name="generator" content="ReSpec 11.4.1">
+  <meta name="generator" content="ReSpec 12.0.6">
   <script id="initialUserConfig" type="application/json">
     {
-      "specStatus": "CR",
+      "specStatus": "REC",
+      "publishDate": "2017-05-23",
+      "prEnd": "2017-05-11",
       "crEnd": "2017-01-12",
       "license": "w3c-software-doc",
       "edDraftURI": "http://w3c.github.io/activitystreams/vocabulary/",
@@ -677,7 +380,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       },
       {
         "name": "Evan Prodromou",
-        "url": "https://fuzzy.ai/about#evan",
+        "url": "https://fuzzy.ai/about",
         "company": "Fuzzy.ai",
         "companyUrl": "https://fuzzy.ai",
         "w3cid": "43626"
@@ -687,12 +390,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         "IBM"
       ],
       "maxTocLevel": 2,
-      "previousMaturity": "WD",
-      "previousPublishDate": "2016-07-12",
+      "previousMaturity": "PR",
+      "previousPublishDate": "2016-04-13",
       "wg": "Social Web Working Group",
-      "wgURI": "http://www.w3.org/Social/WG",
+      "wgURI": "https://www.w3.org/Social/WG",
       "wgPublicList": "public-socialweb",
-      "wgPatentURI": "http://www.w3.org/2004/01/pp-impl/72531/status",
+      "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/72531/status",
       "localBiblio":
       {
         "AS1":
@@ -745,10 +448,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Activity Vocabulary</h1>
-    <h2 id="w3c-candidate-recommendation-11-april-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2017-04-11">11 April 2017</time></h2>
+    <h2 id="w3c-recommendation-23-may-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Recommendation <time property="dcterms:issued" class="dt-published" datetime="2017-05-23">23 May 2017</time></h2>
     <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170411/">https://www.w3.org/TR/2017/CR-activitystreams-vocabulary-20170411/</a></dd>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2017/REC-activitystreams-vocabulary-20170523/">https://www.w3.org/TR/2017/REC-activitystreams-vocabulary-20170523/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/activitystreams-vocabulary/">https://www.w3.org/TR/activitystreams-vocabulary/</a></dd>
       <dt>Latest editor's draft:</dt>
@@ -758,12 +461,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <dt>Implementation report:</dt>
       <dd><a href="https://github.com/w3c/activitystreams/tree/master/implementation-reports">https://github.com/w3c/activitystreams/tree/master/implementation-reports</a></dd>
       <dt>Previous version:</dt>
-      <dd><a rel="dcterms:replaces" href="https://www.w3.org/TR/2016/WD-activitystreams-vocabulary-20160712/">https://www.w3.org/TR/2016/WD-activitystreams-vocabulary-20160712/</a></dd>
+      <dd><a rel="dcterms:replaces" href="https://www.w3.org/TR/2016/PR-activitystreams-vocabulary-20160413/">https://www.w3.org/TR/2016/PR-activitystreams-vocabulary-20160413/</a></dd>
       <dt>Editors:</dt>
       <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0" data-editor-id="26988"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="James M Snell"><a class="u-url url p-name fn" property="foaf:homepage" href="http://jasnell.me">James M Snell</a>, IBM</span>
         <span property="rdf:rest" resource="_:editor1"></span>
       </dd>
-      <dd class="p-author h-card vcard" resource="_:editor1" data-editor-id="43626"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Evan Prodromou"><a class="u-url url p-name fn" property="foaf:homepage" href="https://fuzzy.ai/about#evan">Evan Prodromou</a>, Fuzzy.ai</span>
+      <dd class="p-author h-card vcard" resource="_:editor1" data-editor-id="43626"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Evan Prodromou"><a class="u-url url p-name fn" property="foaf:homepage" href="https://fuzzy.ai/about">Evan Prodromou</a>, Fuzzy.ai</span>
         <span property="rdf:rest" resource="rdf:nil"></span>
       </dd>
 
@@ -828,23 +531,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
     <p>
-      This document was published by the <a href="http://www.w3.org/Social/WG">Social Web Working Group</a> as a Candidate Recommendation. This document is intended to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. If you wish to make comments regarding this document, please send them to
+      This document was published by the <a href="https://www.w3.org/Social/WG">Social Web Working Group</a> as a Recommendation. Comments regarding this document are welcome. Please send them to
       <a href="mailto:public-socialweb@w3.org">public-socialweb@w3.org</a> (<a href="mailto:public-socialweb-request@w3.org?subject=subscribe">subscribe</a>,
       <a href="https://lists.w3.org/Archives/Public/public-socialweb/">archives</a>).
-      <abbr title="World Wide Web Consortium">W3C</abbr> publishes a Candidate Recommendation to indicate that the document is believed to be stable and to encourage implementation by the developer community. This Candidate Recommendation is expected to advance to Proposed Recommendation no earlier than 12 January 2017. All comments are welcome.
     </p>
     <p>
       Please see the Working Group's <a href="https://github.com/w3c/activitystreams/tree/master/implementation-reports">implementation
               report</a>.
     </p>
     <p>
-      Publication as a Candidate Recommendation does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+      This document has been reviewed by <abbr title="World Wide Web Consortium">W3C</abbr> Members, by software developers, and by other <abbr title="World Wide Web Consortium">W3C</abbr> groups and interested parties, and is endorsed by the Director as a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is a stable document and may be used as reference material or cited from another document. <abbr title="World Wide Web Consortium">W3C</abbr>'s role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.
     </p>
     <p>
       This document was produced by a group operating under the
       <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
               Policy</a>.
-      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/72531/status" rel="disclosure">public list of any patent
+      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/72531/status" rel="disclosure">public list of any patent
                 disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains
       <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
               Claim(s)</a> must disclose the information in accordance with
@@ -908,7 +610,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span>
     </h2>
     <p>
-      <a href="activitystreams2.html">The Activity Streams 2.0 Core Syntax</a> defines the JSON syntax for Activity Streams. This document defines the vocabulary properties.
+      <a href="https://www.w3.org/TR/activitystreams-core/">The Activity Streams 2.0 Core Syntax</a> defines the JSON syntax for Activity Streams. This document defines the vocabulary properties.
     </p>
 
     <p>
@@ -926,7 +628,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
     <p>
       While not all Activity Streams 2.0 implementations are expected to implement support for the Extended properties, all implementations <em class="rfc2119" title="MUST">MUST</em> at least be capable of serializing and deserializing the Extended properties in accordance with the
-      <a href="activitystreams2.html">Activity Streams 2.0 Core Syntax</a>.
+      <a href="https://www.w3.org/TR/activitystreams-core/">Activity Streams 2.0 Core Syntax</a>.
     </p>
 
     <p>
@@ -1251,7 +953,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </p>
             <p>
               Refer to the
-              <a href="https://www.w3.org/TR/activitystreams-core/#def-collection">Activity Streams 2.0 Core</a> specification for a complete description of the
+              <a href="https://www.w3.org/TR/activitystreams-core/#collection">Activity Streams 2.0 Core</a> specification for a complete description of the
               <code>Collection</code> type.
             </p>
           </td>
@@ -3170,7 +2872,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <td>Notes:</td>
             <td>
               <p>
-                Describes a relationship between two individuals. The <code><a data-lt="subject" href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
+                Describes a relationship between two individuals. The <code><a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
                 <code><a data-lt="object-term" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code> properties are used to identify the connected individuals.
               </p>
               <p>
@@ -3185,7 +2887,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <tr>
             <td>Properties:</td>
             <td>
-              <p><code><a data-lt="subject" href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> |
+              <p><code><a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> |
                 <code><a data-lt="object-term" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code> |
                 <code><a data-lt="relationship-term" href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a></code></p>
               <p>Inherits all properties from <code><a href="#dfn-object" class="internalDFN" data-link-type="dfn">Object</a></code>.</p>
@@ -6638,7 +6340,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <td>
             On a <code><a href="#dfn-relationship" class="internalDFN" data-link-type="dfn">Relationship</a></code> object, the
             <code>relationship</code> property identifies the kind of relationship that exists between
-            <code><a data-lt="subject" href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
+            <code><a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
             <code><a data-lt="object-term" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code>.
 
           </td>
@@ -6960,8 +6662,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
       <p>
         The <code><a data-lt="relationship-term" href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a></code> property specifies the kind of relationship that exists between the two individuals identified by the
-        <code><a data-lt="subject" href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
-        <code><a data-lt="object" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code> properties. Used together, these three properties form what is commonly known as a "
+        <code><a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> and
+        <code><a data-lt="object-term" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code> properties. Used together, these three properties form what is commonly known as a "
         <a href="http://patterns.dataincubator.org/book/reified-statement.html">reified statement</a>" where <code><a data-lt="subject" href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a></code> identifies the subject, <code><a data-lt="relationship-term" href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a></code> identifies the predicate, and
         <code><a data-lt="object-term" href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a></code> identifies the object.
       </p>
@@ -7431,7 +7133,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <figure id="fig-a-simple-note-with-a-mention-an-a-hashtag">
-        <figcaption>Fig. <span class="figno">1</span> <span class="fig-title">A simple note with a mention an a hashtag:</span></figcaption>
+        <figcaption>Figure <span class="figno">1</span> <span class="fig-title">A simple note with a mention an a hashtag:</span></figcaption>
         <pre aria-busy="false" aria-live="polite" class="hljs css"> "<span class="hljs-selector-tag">Thank</span> <span class="hljs-selector-tag">you</span> @<span class="hljs-keyword">sally</span> for all your hard work! #givingthanks<span class="hljs-string">" </span></pre>
       </figure>
 
@@ -7710,8 +7412,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h4 id="h-motivations-questions" resource="#h-motivations-questions"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.8.9 </span>Questions</span>
         </h4>
         <p>
-          the Questions use case primarily deals with representing inquiries of any type. See
-          <a href="questions"></a> for more information.
+          the Questions use case primarily deals with representing inquiries of any type. See <a href="#questions" class="sec-ref"><span class="secno">5.4</span> <span class="sec-title">Representing Questions</span></a> for more information.
         </p>
         <p>Relevant Activities:
         </p>
@@ -7782,7 +7483,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p><em>This section is non-normative.</em></p>
 
     <p>
-      A <i>non-normative</i> turtle definition of the Activity Streams 2.0 vocabulary is provided <a href="activitystreams2.owl">here</a> as a convenience for implementers wishing to use RDF mechanisms for processing Activity Streams 2.0. Note, however, that this document provides the normative definition of the Activity Streams 2.0 vocabulary.
+      A <i>non-normative</i> turtle definition of the Activity Streams 2.0 vocabulary is provided <a href="/ns/activitystreams-owl">here</a> and/or at <a href="/ns/activitystreams">the namespace</a> as a convenience for implementers wishing to use RDF mechanisms for processing Activity Streams 2.0. Note, however, that this document provides the normative definition of the Activity Streams 2.0 vocabulary.
     </p>
 
   </section>
